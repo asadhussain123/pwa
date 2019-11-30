@@ -1,0 +1,23 @@
+<form (ngSubmit)="signup(signupFormU.valid)" #signupFormU="ngForm">
+    <mat-form-field>
+        <input matInput name="phone" [(ngModel)]="signupForm.phone" #phone="ngModel" placeholder="Enter Phone Number" type="tel" required>
+        <mat-hint>ex: 03002465741</mat-hint>
+    </mat-form-field>
+
+    <mat-form-field>
+        <textarea matInput name="address" [(ngModel)]="signupForm.address" #address="ngModel" placeholder="Enter Address" type="text" required>
+        </textarea>
+        <mat-hint>ex: City Area Sector Street No/Block</mat-hint>
+    </mat-form-field>
+
+    <mat-form-field>
+            <input matInput name="name" [(ngModel)]="signupForm.name" #name="ngModel" placeholder="Enter Name" type="email">
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput name="email" [(ngModel)]="signupForm.email" #email="ngModel" placeholder="Enter Email" type="email">
+        <mat-hint>ex: abcd@domain.com</mat-hint>
+    </mat-form-field>
+
+    <button mat-raised-button type="submit" name="SubmitBtn" [disabled]='signupFormU.invalid' color="primary"> Signup</button>
+</form>
