@@ -1,8 +1,8 @@
 {
   "configVersion": 1,
-  "timestamp": 1575225584379,
+  "timestamp": 1575226455542,
   "appData": {
-    "version": "1.8",
+    "version": "1.9",
     "changelog": "header added"
   },
   "index": "/pwa/index.html",
@@ -14,14 +14,14 @@
       "urls": [
         "/pwa/favicon.ico",
         "/pwa/index.html",
-        "/pwa/main-es2015.78b1a0eb7203565d6190.js",
-        "/pwa/main-es5.78b1a0eb7203565d6190.js",
+        "/pwa/main-es2015.e0abef0c527748c37240.js",
+        "/pwa/main-es5.e0abef0c527748c37240.js",
         "/pwa/manifest.webmanifest",
         "/pwa/polyfills-es2015.2987770fde9daa1d8a2e.js",
         "/pwa/polyfills-es5.6696c533341b95a3d617.js",
         "/pwa/runtime-es2015.edb2fcf2778e7bf1d426.js",
         "/pwa/runtime-es5.edb2fcf2778e7bf1d426.js",
-        "/pwa/styles.bae59328c4175184c7d0.css"
+        "/pwa/styles.36cb452919755a3fa190.css"
       ],
       "patterns": []
     },
@@ -53,15 +53,15 @@
     "/pwa/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
     "/pwa/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
     "/pwa/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "/pwa/index.html": "c4b7ce891cfcca8710543a51fd6e08771f0ef1e2",
-    "/pwa/main-es2015.78b1a0eb7203565d6190.js": "b0d04d132f16775b5fbb791f12eae404b4315200",
-    "/pwa/main-es5.78b1a0eb7203565d6190.js": "f58dc9551ac1172c6161753f71e743c616e22a03",
+    "/pwa/index.html": "6c05b0de4ad3bfb9593e44b521c2589a23a19707",
+    "/pwa/main-es2015.e0abef0c527748c37240.js": "4ad7f96202855192ac7cc8d9c0f9340656bd7518",
+    "/pwa/main-es5.e0abef0c527748c37240.js": "58320fd9b9e7fce09d9dc77d0ba700465c4a6778",
     "/pwa/manifest.webmanifest": "d0a6788b5070a157968894bebaa6d38d3dc29d19",
     "/pwa/polyfills-es2015.2987770fde9daa1d8a2e.js": "cf5cbfa9134716054fb479ab21362146cdf1f2ff",
     "/pwa/polyfills-es5.6696c533341b95a3d617.js": "45c51483238468881240579c3fdecd19144cff17",
     "/pwa/runtime-es2015.edb2fcf2778e7bf1d426.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
     "/pwa/runtime-es5.edb2fcf2778e7bf1d426.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
-    "/pwa/styles.bae59328c4175184c7d0.css": "cd698097dd617d95cb42b36d47800231ef737e9f"
+    "/pwa/styles.36cb452919755a3fa190.css": "57fb9c1e045e1fcecf1fc0ae2d28f18c7e782764"
   },
   "navigationUrls": [
     {
