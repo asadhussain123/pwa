@@ -18,19 +18,19 @@ export const Translation = {
     },
     ur: {
         app: {
-            title: "Gujjar Dairy ur"
+            title: "گوجر ڈیری"
         },
         signupPage: {
             phone: "فون نمبر درج کریں",
             email: "ای میل درج کریں",
             address: "پتہ درج کریں",
             name: "نام درج کریں",
-            submitBtn: "Submit ur",
-            numbersOnlyMsg: "Only Numbers are allow",
-            validEmail: "Please Enter valid email Address"
+            submitBtn: "جمع",
+            numbersOnlyMsg: "براہ کرم درست نمبر درج کریں",
+            validEmail: "براہ کرم درست ای میل ایڈریس درج کریں"
         },
         appLayout: {
-            language: "Language ur"
+            language: "زبان"
         } 
     },
 }

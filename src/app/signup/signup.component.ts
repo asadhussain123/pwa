@@ -39,7 +39,9 @@ export class SignupComponent implements OnInit {
         },
         error => {
           const msg = error.error || error.message;
-          this.errorMsg = msg.split('Parameter').length > 1 ? msg.split('Parameter')[1].replace(')',''): msg.split('Parameter')[0];
+          this.errorMsg = msg.split('Parameter').length > 1 ? 
+                          msg.split('Parameter')[1].replace(')',''): 
+                          msg.split('Parameter')[0];
         });
   }
 
