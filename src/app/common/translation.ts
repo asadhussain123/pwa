@@ -8,7 +8,7 @@ export const Translation = {
             email: "Enter Email",
             address: "Enter Address",
             name: "Enter Name",
-            submitBtn: "Submit",
+            submitBtn: "Signup",
             numbersOnlyMsg: "Please enter valid number",
             validEmail: "Please Enter valid email Address"
         },
