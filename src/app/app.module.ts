@@ -16,6 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppLayoutComponent } from './layout/app-layout/app-layout.component';
 import { AppLayoutHeaderComponent } from './layout/app-layout/app-layout-header/app-layout-header.component';
 import { TranslationManagerService } from './common/translation-manager.service';
+import { NgxUiLoaderModule, NgxUiLoaderHttpModule } from  'ngx-ui-loader';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,8 @@ import { TranslationManagerService } from './common/translation-manager.service'
     BrowserAnimationsModule,
     NoopAnimationsModule,
     HttpClientModule,
+    NgxUiLoaderModule, 
+    NgxUiLoaderHttpModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [ TranslationManagerService ],
