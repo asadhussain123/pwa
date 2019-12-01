@@ -1,3 +1,6 @@
+<mat-toolbar>
+        <span>{{trnsl.page[pageName].register}}</span>
+      </mat-toolbar>
 <form (ngSubmit)="signup(signupFormU.valid)" #signupFormU="ngForm">
     <mat-form-field>
         <input matInput name="phone" pattern="^[0-9]*$" [(ngModel)]="signupForm.phone" maxlength="15" #phone="ngModel"
