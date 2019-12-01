@@ -1,13 +1,17 @@
 <form (ngSubmit)="login(loginFormU.valid)" #loginFormU="ngForm">
     <mat-form-field>
-        <input matInput name="phone" placeholder="Enter Phone Number" [(ngModel)]="loginForm.phone" type="tel" required #phone="ngModel">
+        <input matInput name="phone" placeholder="Enter Phone Number" [(ngModel)]="loginForm.phone" type="tel" required
+            #phone="ngModel">
         <mat-hint>ex: 03002465741</mat-hint>
     </mat-form-field>
 
     <mat-form-field>
-        <input matInput placeholder="Enter Password" name="pwd" [(ngModel)]="loginForm.password" [type]="'password'" required #password="ngModel">
+        <input matInput placeholder="Enter Password" name="pwd" [(ngModel)]="loginForm.password" [type]="'password'"
+            required #password="ngModel">
     </mat-form-field>
- 
-    <button mat-raised-button name="SubmitBtn" type="submit" [disabled]='loginFormU.invalid' color="primary">Sign In</button>
+
+    <p class="error" *ngIf="errorMsg">{{ errorMsg }}</p>
+    <button mat-raised-button name="SubmitBtn" type="submit" [disabled]='loginFormU.invalid' color="primary">Sign
+        In</button>
     <button mat-button name="signupBtn" (click)="routeToSignup()">Signup!</button>
 </form>

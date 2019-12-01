@@ -15,6 +15,7 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { AppLayoutComponent } from './layout/app-layout/app-layout.component';
 import { AppLayoutHeaderComponent } from './layout/app-layout/app-layout-header/app-layout-header.component';
+import { TranslationManagerService } from './common/translation-manager.service';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,7 @@ import { AppLayoutHeaderComponent } from './layout/app-layout/app-layout-header/
     HttpClientModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
-  providers: [],
+  providers: [ TranslationManagerService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

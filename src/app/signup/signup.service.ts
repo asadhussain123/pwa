@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { HttpClient  } from '@angular/common/http';
+import { Signup } from '../common/apiEndpoint';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +16,7 @@ export class SignupService {
   }
 
   create(model) {
-    this.http.post(this.baseUrl + Signup.create, model);
+    return this.http.post(this.baseUrl + Signup.create, model);
   }
 
   update() {

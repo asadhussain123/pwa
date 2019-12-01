@@ -14,8 +14,8 @@ const routes: Routes = [
     path: '',
     component: AppLayoutComponent,
     children: [
-      { path: '', component: LoginComponent, pathMatch: 'full'},
-      { path: 'login', component: LoginComponent },
+      { path: '', component: SignupComponent, pathMatch: 'full'},
+      // { path: 'login', component: LoginComponent },
       { path: 'signup', component: SignupComponent },
       { path: 'dashboard', component: DashboardComponent }
     ]

@@ -13,7 +13,8 @@ export class LoginComponent implements OnInit {
   public loginForm = new Login();
 
   hide = true;
-
+  pageName = "signupPage"
+  errorMsg = '';
   constructor(private route: Router) { }
 
   ngOnInit() {

@@ -7,7 +7,15 @@
         mode="over" 
         class="sidenav">
         <div class="content"> 
-          Comming Soon!
+          <mat-form-field>
+            <mat-label>{{ trnsl.page[pageName].language }}</mat-label>
+            <mat-select (selectionChange)="languageChange($event.value)">
+              <mat-option *ngFor="let lang of trnsl.langs" [value]="lang.key">
+                {{lang.displayName}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
           <mat-list>
             <mat-list-item *ngFor="let route of nav">
               <a mat-button routerLink="{{route.path}}" routerLinkActive="active" (click)="toggleMobileNav(lnav)">{{route.title}}</a>
@@ -33,7 +41,7 @@
             <mat-icon>menu</mat-icon>
           </button>
           <div class="fill-space"></div>
-          {{title}}
+          {{ trnsl.page[pageApp].title }}
           <div class="fill-space"></div>
           <span whoami></span>
         </mat-toolbar>

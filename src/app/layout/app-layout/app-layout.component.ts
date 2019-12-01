@@ -3,10 +3,13 @@ import {
   ChangeDetectorRef,
   EventEmitter,
   Output,
-  OnInit
+  OnInit,
+  Renderer
 } from '@angular/core';
 import { MediaMatcher } from '@angular/cdk/layout';
 import { MatSidenav } from '@angular/material';
+import { TranslationManagerService } from 'src/app/common/translation-manager.service';
+import { LanguageType } from 'src/app/common/languageType';
 
 @Component({
   selector: 'app-app-layout',
@@ -17,8 +20,8 @@ export class AppLayoutComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
-  title = 'Gujjar Dairy';
+  pageName = "appLayout";
+  pageApp = "app";
   mobileQuery: MediaQueryList;
   nav = [
     // {
@@ -49,7 +52,11 @@ export class AppLayoutComponent implements OnInit {
   private _mobileQueryListener: () => void;
   @Output() toggleSideNav = new EventEmitter();
   
-  constructor( changeDetectorRef: ChangeDetectorRef, media: MediaMatcher) {
+  constructor( 
+              private renderer: Renderer,
+              changeDetectorRef: ChangeDetectorRef, 
+              media: MediaMatcher,
+              public trnsl: TranslationManagerService) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
@@ -58,6 +65,18 @@ export class AppLayoutComponent implements OnInit {
   toggleMobileNav(nav: MatSidenav) {
     if (this.mobileQuery.matches) {
       nav.toggle();
+    }
+  }
+
+  languageChange(value) {
+    this.trnsl.currentLanguage = value;
+    this.trnsl.page = this.trnsl.translations[this.trnsl.currentLanguage];
+    if (LanguageType.english == value) {
+      this.renderer.setElementClass(document.body, 'translate', false);
+      this.renderer.setElementClass(document.body, 'nTranslate', true);
+    } else {
+      this.renderer.setElementClass(document.body, 'nTranslate', false);
+      this.renderer.setElementClass(document.body, 'translate', true);
     }
   }
 }

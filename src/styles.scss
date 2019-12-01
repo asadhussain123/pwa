@@ -79,3 +79,25 @@ a {
 .active {
     color: mat-color($app-active);
 }
+
+.translate {
+    direction: rtl;
+    .mat-form-field {
+        direction: rtl;
+        text-align: right;
+    }
+}
+
+.nTranslate {
+    direction: ltr;
+    &.mat-form-field {
+        direction: ltr;
+        text-align: left;
+    }
+}
+
+.error {
+    background-color: #eac5c5;
+    color: red;
+}
+
