@@ -19,7 +19,7 @@ export const Translation = {
     },
     ur: {
         app: {
-            title: "گوجر ڈیری"
+            title: "گجر ڈیری"
         },
         signupPage: {
             phone: "فون نمبر درج کریں",
