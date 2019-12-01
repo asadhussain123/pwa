@@ -1,8 +1,12 @@
 <form (ngSubmit)="signup(signupFormU.valid)" #signupFormU="ngForm">
     <mat-form-field>
-        <input matInput name="phone" [(ngModel)]="signupForm.phone" maxlength="15" #phone="ngModel"
+        <input matInput name="phone" pattern="^[0-9]*$" [(ngModel)]="signupForm.phone" maxlength="15" #phone="ngModel"
             placeholder="{{trnsl.page[pageName].phone}}" type="tel" required>
-        <mat-hint>ex: 03002465741</mat-hint>
+        <mat-hint *ngIf="!phone.errors || (phone.errors && phone.errors.required)">ex: 03002465741</mat-hint>
+
+        <mat-hint class="error" *ngIf="phone.errors && phone.errors.pattern">
+            {{trnsl.page[pageName].numbersOnlyMsg}} ex:
+            sdsdsdsd ex: 03002465741</mat-hint>
     </mat-form-field>
 
     <mat-form-field>
@@ -18,10 +22,14 @@
     </mat-form-field>
 
     <mat-form-field>
-        <input matInput name="email" maxlength="150" [(ngModel)]="signupForm.email" #email="ngModel"
-            placeholder="{{trnsl.page[pageName].email}}" type="email">
+        <input matInput pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$" name="email" maxlength="150"
+            [(ngModel)]="signupForm.email" #email="ngModel" placeholder="{{trnsl.page[pageName].email}}" type="email">
         <mat-hint>ex: abcd@domain.com</mat-hint>
+        <!-- <mat-hint class="error" *ngIf="email.errors && email.errors.pattern && signupFormU.submitted">
+            {{trnsl.page[pageName].validEmail}} ex:
+            sdsdsdsd ex: abcd@domain.com</mat-hint> -->
     </mat-form-field>
+
     <p class="error" *ngIf="errorMsg">{{ errorMsg }}</p>
     <button mat-raised-button type="submit" name="SubmitBtn" [disabled]='signupFormU.invalid' color="primary">
         {{ trnsl.page[pageName].submitBtn }}</button>
