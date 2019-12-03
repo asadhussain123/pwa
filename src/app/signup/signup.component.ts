@@ -96,7 +96,7 @@ export class SignupComponent implements OnInit {
       });
   }
   loadArea(districtId) {
-      this.lookupService.getDistrictsByCityId(districtId)
+      this.lookupService.getAreasByDistrictId(districtId)
       .subscribe(resp => {
         this.areas = resp;
       }, error => {
