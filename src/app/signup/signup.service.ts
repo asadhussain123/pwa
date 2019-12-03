@@ -12,7 +12,7 @@ export class SignupService {
   }
 
   get() {
-    this.http.get(this.baseUrl + Signup.get);
+    return this.http.get(this.baseUrl + Signup.get);
   }
 
   create(model) {

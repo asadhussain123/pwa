@@ -5,12 +5,13 @@ import { User } from '../common/models/user';
 import { SignupService } from './signup.service';
 import { StatusCode } from '../common/statusCode';
 import { TranslationManagerService } from '../common/translation-manager.service';
+import { LookupService } from '../common/lookup.service';
 
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.css'],
-  providers: [SignupService]
+  providers: [SignupService, LookupService]
 })
 export class SignupComponent implements OnInit {
 
@@ -29,9 +30,11 @@ export class SignupComponent implements OnInit {
   constructor(
     private route: Router,
     private signupService: SignupService,
-    public trnsl: TranslationManagerService) { }
+    public trnsl: TranslationManagerService,
+    public lookupService: LookupService) { }
 
   ngOnInit() {
+    this.loadLookups();
   }
 
   signup(isFormValid) {
@@ -59,6 +62,7 @@ export class SignupComponent implements OnInit {
 
   selectDistrict(districtId) {
     this.updateAddress();
+    this.loadArea(districtId);
   }
 
   selectArea() {
@@ -80,7 +84,22 @@ export class SignupComponent implements OnInit {
         this.areas.filter(x => x.id == this.signupForm.areaId)[0].name +
         this.signupForm.block +
         this.signupForm.houseNo;
-        this.signupForm.address = address;
-      }
+      this.signupForm.address = address;
+    }
+  }
+
+  loadLookups() {
+    this.lookupService.getDistrictsByCityId('')
+      .subscribe(resp => {
+        this.districts = resp;
+      }, error => {
+      });
+  }
+  loadArea(districtId) {
+      this.lookupService.getDistrictsByCityId(districtId)
+      .subscribe(resp => {
+        this.areas = resp;
+      }, error => {
+      });
   }
 }

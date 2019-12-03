@@ -5,3 +5,9 @@ export enum Signup {
     udpate = '/update',
     delete = '/delete',
 }
+
+export enum Lookup {
+    base = '/Lookup',
+    getDistrictsByCityId = '/getDistrictsByCityId',
+    getAreasByDistrictId = '/getAreasByDistrictId', 
+}
