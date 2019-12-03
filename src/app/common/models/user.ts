@@ -3,4 +3,11 @@ export class User {
     address: string;
     name: string;
     email: string;
+    countryId: number;
+    cityId: number;
+    districtId: number;
+    areaId: number;
+    block: string;
+    houseNo: string;
+
 }

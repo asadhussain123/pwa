@@ -1,7 +1,7 @@
 export const Translation = {
     en: {
         app: {
-            title: "Gujjar Dairy"
+            title: "Gujjar Dairy Farmers"
         },
         signupPage: {
             phone: "Enter Phone Number",
@@ -11,7 +11,12 @@ export const Translation = {
             submitBtn: "Submit",
             numbersOnlyMsg: "Please enter valid number",
             validEmail: "Please Enter valid email Address",
-            register: "Register"
+            register: "Get Register Yourself",
+            district: "District",
+            area: "Area",
+            block: "Sector/Block/Street",
+            houseNo: "Get Register Yourself",
+            
         },
         appLayout: {
             language: "Language"
@@ -19,7 +24,7 @@ export const Translation = {
     },
     ur: {
         app: {
-            title: "گجر ڈیری"
+            title: "گجر ڈیری فارمر"
         },
         signupPage: {
             phone: "فون نمبر درج کریں",
@@ -29,7 +34,11 @@ export const Translation = {
             submitBtn: "جمع",
             numbersOnlyMsg: "براہ کرم درست نمبر درج کریں",
             validEmail: "براہ کرم درست ای میل ایڈریس درج کریں",
-            register: "رجسٹر کریں"
+            register: "اپنا اندراج کروائیں",
+            district: "ضلع",
+            area: "ا یر یا",
+            block: "سیکٹر/بلاک/گلی",
+            houseNo: "مکان نمبر",
         },
         appLayout: {
             language: "زبان"

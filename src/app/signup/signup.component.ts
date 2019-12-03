@@ -18,6 +18,14 @@ export class SignupComponent implements OnInit {
   hide = true;
   pageName = "signupPage"
   errorMsg = '';
+
+  // dropdowns
+  countries = [];
+  cities = [];
+  districts = [];
+  areas = [];
+
+  show = false;
   constructor(
     private route: Router,
     private signupService: SignupService,
@@ -39,13 +47,40 @@ export class SignupComponent implements OnInit {
         },
         error => {
           const msg = error.error || error.message;
-          this.errorMsg = msg.split('Parameter').length > 1 ? 
-                          msg.split('Parameter')[1].replace(')',''): 
-                          msg.split('Parameter')[0];
+          this.errorMsg = msg.split('Parameter').length > 1 ?
+            msg.split('Parameter')[1].replace(')', '') :
+            msg.split('Parameter')[0];
         });
   }
 
   routeToLogin() {
     this.route.navigate(['/login']);
+  }
+
+  selectDistrict(districtId) {
+    this.updateAddress();
+  }
+
+  selectArea() {
+    this.updateAddress();
+  }
+
+  blockEvent() {
+    this.updateAddress();
+  }
+
+  houseNoEvent() {
+    this.updateAddress();
+  }
+
+  updateAddress() {
+    if (this.signupForm.districtId && this.signupForm.areaId &&
+      this.signupForm.block && this.signupForm.houseNo) {
+      const address = this.districts.filter(x => x.id == this.signupForm.districtId)[0].name +
+        this.areas.filter(x => x.id == this.signupForm.areaId)[0].name +
+        this.signupForm.block +
+        this.signupForm.houseNo;
+        this.signupForm.address = address;
+      }
   }
 }
