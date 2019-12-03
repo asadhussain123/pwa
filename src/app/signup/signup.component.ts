@@ -80,9 +80,9 @@ export class SignupComponent implements OnInit {
   updateAddress() {
     if (this.signupForm.districtId && this.signupForm.areaId &&
       this.signupForm.block && this.signupForm.houseNo) {
-      const address = this.districts.filter(x => x.id == this.signupForm.districtId)[0].name +
-        this.areas.filter(x => x.id == this.signupForm.areaId)[0].name +
-        this.signupForm.block +
+      const address = this.districts.filter(x => x.id == this.signupForm.districtId)[0].name + ` `
+        this.areas.filter(x => x.id == this.signupForm.areaId)[0].name + ` `
+        this.signupForm.block + ` `
         this.signupForm.houseNo;
       this.signupForm.address = address;
     }

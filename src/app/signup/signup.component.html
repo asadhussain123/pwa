@@ -15,7 +15,7 @@
     <mat-form-field *ngIf="show">
         <mat-label>Country</mat-label>
         <mat-select required name="countryId" [(ngModel)]="signupForm.countryId" #countryId="ngModel">
-            <mat-option *ngFor="let country of countries" [value]="country.Id">
+            <mat-option *ngFor="let country of countries" [value]="country.id">
                 {{country.name}}
             </mat-option>
         </mat-select>
@@ -24,7 +24,7 @@
     <mat-form-field *ngIf="show">
         <mat-label>City</mat-label>
         <mat-select required name="cityId" [(ngModel)]="signupForm.cityId" #cityId="ngModel">
-            <mat-option *ngFor="let city of cities" [value]="city.Id">
+            <mat-option *ngFor="let city of cities" [value]="city.id">
                 {{city.name}}
             </mat-option>
         </mat-select>
@@ -34,7 +34,7 @@
         <mat-label>{{trnsl.page[pageName].district}}</mat-label>
         <mat-select required name="districtId" [(ngModel)]="signupForm.districtId" #districtId="ngModel"
             (selectionChange)="selectDistrict($event.value)">
-            <mat-option *ngFor="let district of districts" [value]="district.Id">
+            <mat-option *ngFor="let district of districts" [value]="district.id">
                 {{district.name}}
             </mat-option>
         </mat-select>
@@ -44,7 +44,7 @@
         <mat-label>{{trnsl.page[pageName].area}}</mat-label>
         <mat-select required name="areaId" [(ngModel)]="signupForm.areaId" #areaId="ngModel"
             (selectionChange)="selectArea($event.value)">
-            <mat-option *ngFor="let area of areas" [value]="area.Id">
+            <mat-option *ngFor="let area of areas" [value]="area.id">
                 {{area.name}}
             </mat-option>
         </mat-select>
@@ -66,7 +66,7 @@
         <textarea matInput name="address" maxlength="200" [(ngModel)]="signupForm.address" #address="ngModel"
             placeholder="{{trnsl.page[pageName].address}}" type="text" required>
         </textarea>
-        <mat-hint>ex: City Area Sector Street No/Block</mat-hint>
+        <mat-hint>ex: District Area Sector/Street#/Block</mat-hint>
     </mat-form-field>
 
     <mat-form-field>
