@@ -15,7 +15,7 @@ export const Translation = {
             district: "District",
             area: "Area",
             block: "Sector/Block/Street",
-            houseNo: "Get Register Yourself",
+            houseNo: "House No.",
             
         },
         appLayout: {
