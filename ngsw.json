@@ -1,8 +1,8 @@
 {
   "configVersion": 1,
-  "timestamp": 1575226455542,
+  "timestamp": 1576439662775,
   "appData": {
-    "version": "1.9",
+    "version": "2.0",
     "changelog": "header added"
   },
   "index": "/pwa/index.html",
@@ -14,14 +14,14 @@
       "urls": [
         "/pwa/favicon.ico",
         "/pwa/index.html",
-        "/pwa/main-es2015.e0abef0c527748c37240.js",
-        "/pwa/main-es5.e0abef0c527748c37240.js",
+        "/pwa/main-es2015.4674545f1ff0d00d246c.js",
+        "/pwa/main-es5.4674545f1ff0d00d246c.js",
         "/pwa/manifest.webmanifest",
         "/pwa/polyfills-es2015.2987770fde9daa1d8a2e.js",
         "/pwa/polyfills-es5.6696c533341b95a3d617.js",
         "/pwa/runtime-es2015.edb2fcf2778e7bf1d426.js",
         "/pwa/runtime-es5.edb2fcf2778e7bf1d426.js",
-        "/pwa/styles.36cb452919755a3fa190.css"
+        "/pwa/styles.68cf1e99a7271d62bf42.css"
       ],
       "patterns": []
     },
@@ -30,6 +30,10 @@
       "installMode": "lazy",
       "updateMode": "prefetch",
       "urls": [
+        "/pwa/Urdu Nafees_Pakistani_Naskh.95d5269f7729c90edf1e.ttf",
+        "/pwa/Urdu Noori Nastalique Unicode.065b6f453f820f6f86bd.ttf",
+        "/pwa/assets/fonts/Urdu Nafees_Pakistani_Naskh.ttf",
+        "/pwa/assets/fonts/Urdu Noori Nastalique Unicode.ttf",
         "/pwa/assets/icons/icon-128x128.png",
         "/pwa/assets/icons/icon-144x144.png",
         "/pwa/assets/icons/icon-152x152.png",
@@ -44,24 +48,28 @@
   ],
   "dataGroups": [],
   "hashTable": {
-    "/pwa/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
-    "/pwa/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
-    "/pwa/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
-    "/pwa/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
+    "/pwa/Urdu Nafees_Pakistani_Naskh.95d5269f7729c90edf1e.ttf": "0bb5fd8a6acf5c3953425b339f5bdf5b4ef5e874",
+    "/pwa/Urdu Noori Nastalique Unicode.065b6f453f820f6f86bd.ttf": "cb2be4d17ce709847266d353a324e0fdc3eac906",
+    "/pwa/assets/fonts/Urdu Nafees_Pakistani_Naskh.ttf": "0bb5fd8a6acf5c3953425b339f5bdf5b4ef5e874",
+    "/pwa/assets/fonts/Urdu Noori Nastalique Unicode.ttf": "cb2be4d17ce709847266d353a324e0fdc3eac906",
+    "/pwa/assets/icons/icon-128x128.png": "d5698e3b5304163d4112db26a2ad1e983244d63e",
+    "/pwa/assets/icons/icon-144x144.png": "b0701f4d123fde67558fd23f119ca19aac23a4f2",
+    "/pwa/assets/icons/icon-152x152.png": "7e8e601ee381e2f271c1c6f91f6eb6ad78f7538e",
+    "/pwa/assets/icons/icon-192x192.png": "5c4b1d48195e17074810c9b800fe632fc9a76b2a",
     "/pwa/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
-    "/pwa/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
+    "/pwa/assets/icons/icon-512x512.png": "46d18300855ced2b13a5ee2068d49bf3430462fb",
     "/pwa/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
     "/pwa/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
     "/pwa/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "/pwa/index.html": "6c05b0de4ad3bfb9593e44b521c2589a23a19707",
-    "/pwa/main-es2015.e0abef0c527748c37240.js": "4ad7f96202855192ac7cc8d9c0f9340656bd7518",
-    "/pwa/main-es5.e0abef0c527748c37240.js": "58320fd9b9e7fce09d9dc77d0ba700465c4a6778",
+    "/pwa/index.html": "13f1e0bbdbd7ca2c7e3865881f24ca96a6546f7b",
+    "/pwa/main-es2015.4674545f1ff0d00d246c.js": "63917829ab556f7df80c391365a6048473123c59",
+    "/pwa/main-es5.4674545f1ff0d00d246c.js": "2ffa2b080aaf51321cb5739923d5890b22bba905",
     "/pwa/manifest.webmanifest": "d0a6788b5070a157968894bebaa6d38d3dc29d19",
     "/pwa/polyfills-es2015.2987770fde9daa1d8a2e.js": "cf5cbfa9134716054fb479ab21362146cdf1f2ff",
     "/pwa/polyfills-es5.6696c533341b95a3d617.js": "45c51483238468881240579c3fdecd19144cff17",
     "/pwa/runtime-es2015.edb2fcf2778e7bf1d426.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
     "/pwa/runtime-es5.edb2fcf2778e7bf1d426.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
-    "/pwa/styles.36cb452919755a3fa190.css": "57fb9c1e045e1fcecf1fc0ae2d28f18c7e782764"
+    "/pwa/styles.68cf1e99a7271d62bf42.css": "99cf879e743145fa1f3cce06d49474d07a29d801"
   },
   "navigationUrls": [
     {
