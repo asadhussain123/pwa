@@ -3,9 +3,9 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { User } from '../common/models/user';
 import { SignupService } from './signup.service';
-import { StatusCode } from '../common/statusCode';
-import { TranslationManagerService } from '../common/translation-manager.service';
-import { LookupService } from '../common/lookup.service';
+import { StatusCode } from '../common/enums/statusCode';
+import { TranslationManagerService } from '../common/translation/translation-manager.service';
+import { LookupService } from '../common/services/lookup.service';
 
 @Component({
   selector: 'app-signup',
@@ -80,10 +80,10 @@ export class SignupComponent implements OnInit {
   updateAddress() {
     if (this.signupForm.districtId && this.signupForm.areaId &&
       this.signupForm.block && this.signupForm.houseNo) {
-      const address = this.districts.filter(x => x.id == this.signupForm.districtId)[0].name + ` `
-        this.areas.filter(x => x.id == this.signupForm.areaId)[0].name + ` `
-        this.signupForm.block + ` `
-        this.signupForm.houseNo;
+      const address = this.districts.filter(x => x.id == this.signupForm.districtId)[0].name + ' ' +
+                      this.areas.filter(x => x.id == this.signupForm.areaId)[0].name  + ' ' +
+                      this.signupForm.block + ' ' +
+                      this.signupForm.houseNo;
       this.signupForm.address = address;
     }
   }
@@ -96,7 +96,7 @@ export class SignupComponent implements OnInit {
       });
   }
   loadArea(districtId) {
-      this.lookupService.getAreasByDistrictId(districtId)
+    this.lookupService.getAreasByDistrictId(districtId)
       .subscribe(resp => {
         this.areas = resp;
       }, error => {

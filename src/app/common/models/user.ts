@@ -1,5 +1,5 @@
 export class User { 
-    phone: string; 
+    phoneNumber: string; 
     address: string;
     name: string;
     email: string;
@@ -9,5 +9,7 @@ export class User {
     areaId: number;
     block: string;
     houseNo: string;
-
+    password: string;
+    confirmPassword: string;
+    milkAverageUsage: number;
 }

@@ -9,6 +9,8 @@
       </div>
 
       <div class="content">
+        <button mat-raised-button type="button" *ngIf="authSerivce.isLoggedIn" name="SubmitBtn" (click)="logout()" color="primary">
+            logout</button>
         <mat-form-field>
           <mat-label>{{ trnsl.page[pageName].language }}</mat-label>
           <mat-select (selectionChange)="languageChange($event.value)">
@@ -46,7 +48,9 @@
       <mat-drawer-container class="sidenav-container">
         <mat-drawer-content>
           <div class="content">
+              <div class="container">
             <router-outlet></router-outlet>
+          </div>
           </div>
         </mat-drawer-content>
       </mat-drawer-container>

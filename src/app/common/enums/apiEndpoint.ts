@@ -11,3 +11,8 @@ export enum Lookup {
     getDistrictsByCityId = '/getDistrictsByCityId',
     getAreasByDistrictId = '/getAreasByDistrictId', 
 }
+
+export enum login {
+    base= '/Account',
+    login='/login'
+}

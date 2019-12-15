@@ -4,6 +4,8 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AppLayoutComponent } from './layout/app-layout/app-layout.component';
+import { AuthGuard } from './common/guards/auth-guard.service';
+import { NoAuthGuard } from './common/guards/no-auth-guard.service';
 
 
 const routes: Routes = [
@@ -15,9 +17,9 @@ const routes: Routes = [
     component: AppLayoutComponent,
     children: [
       { path: '', component: SignupComponent, pathMatch: 'full'},
-      // { path: 'login', component: LoginComponent },
-      { path: 'signup', component: SignupComponent },
-      { path: 'dashboard', component: DashboardComponent }
+      { path: 'login', component: LoginComponent, canActivate: [NoAuthGuard]},
+      { path: 'signup', component: SignupComponent, canActivate: [NoAuthGuard] },
+      { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] }
     ]
   },
   { path: '**', redirectTo: '' }
@@ -25,7 +27,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class AppRoutingModule {
 

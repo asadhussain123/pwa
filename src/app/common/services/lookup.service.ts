@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { Lookup } from './apiEndpoint';
+import { Lookup } from '../enums/apiEndpoint';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({

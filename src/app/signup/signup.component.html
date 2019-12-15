@@ -1,16 +1,59 @@
 <mat-toolbar class="pageHeading">
-    <span>{{trnsl.page[pageName].register}}</span>
+    <h3 class="form-heading">{{trnsl.page[pageName].register}}</h3>
 </mat-toolbar>
-<form (ngSubmit)="signup(signupFormU.valid)" #signupFormU="ngForm">
-    <mat-form-field>
-        <input matInput name="phone" pattern="^[0-9]*$" [(ngModel)]="signupForm.phone" maxlength="15" #phone="ngModel"
-            placeholder="{{trnsl.page[pageName].phone}}" type="tel" required>
-        <mat-hint *ngIf="!phone.errors || (phone.errors && phone.errors.required)">ex: 03002465741</mat-hint>
 
-        <mat-hint class="error" *ngIf="phone.errors && phone.errors.pattern">
-            {{trnsl.page[pageName].numbersOnlyMsg}} ex:
-            sdsdsdsd ex: 03002465741</mat-hint>
-    </mat-form-field>
+
+<form (ngSubmit)="signup(signupFormU.valid)" #signupFormU="ngForm">
+
+    <div class="row">
+        <div class="col-md-6">
+            <mat-form-field>
+                <input matInput name="phone" pattern="^[0-9]*$" [(ngModel)]="signupForm.phoneNumber" maxlength="15"
+                    #phone="ngModel" placeholder="{{trnsl.page[pageName].phone}}" type="tel" required>
+                <mat-hint *ngIf="!phone.errors || (phone.errors && phone.errors.required)">ex: 03002465741</mat-hint>
+
+                <mat-hint class="error" *ngIf="phone.errors && phone.errors.pattern">
+                    {{trnsl.page[pageName].numbersOnlyMsg}} ex: 03002465741</mat-hint>
+            </mat-form-field>
+        </div>
+        <div class="col-md-6">
+            <mat-form-field>
+                <input matInput name="milkAverageUsage" pattern="^[0-9]*$" [(ngModel)]="signupForm.milkAverageUsage"
+                    maxlength="3" #milkAverageUsage="ngModel" placeholder="{{trnsl.page[pageName].milkAverageUsage}}"
+                    type="number" required>
+                <mat-hint
+                    *ngIf="!milkAverageUsage.errors || (milkAverageUsage.errors && milkAverageUsage.errors.required)">
+                    ex: 1 or 2</mat-hint>
+
+                <mat-hint class="error" *ngIf="milkAverageUsage.errors && milkAverageUsage.errors.pattern">
+                    {{trnsl.page[pageName].numbersOnlyMsg}} ex: 1 or 2</mat-hint>
+            </mat-form-field>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <mat-form-field>
+                <input matInput name="password" pattern="^[a-zA-Z0-9]{6,25}$" [ngModelOptions]="{ updateOn: 'blur' }"
+                    [(ngModel)]="signupForm.password" maxlength="25" #password="ngModel"
+                    placeholder="{{trnsl.page[pageName].password}}" type="password" required>
+                <mat-hint class="error" *ngIf="password.errors && password.errors.pattern">
+                    {{trnsl.page[pageName].alphaNumericPassword}}</mat-hint>
+            </mat-form-field>
+        </div>
+
+        <div class="col-md-6">
+            <mat-form-field>
+                <input matInput name="confirmPassword" [ngModelOptions]="{ updateOn: 'blur' }"
+                    [(ngModel)]="signupForm.confirmPassword" maxlength="25" #confirmPassword="ngModel"
+                    placeholder="{{trnsl.page[pageName].confirmPassword}}" type="password" required>
+                <mat-hint class="error"
+                    *ngIf="signupForm.password && signupForm.confirmPassword && signupForm.password !== signupForm.confirmPassword">
+                    {{trnsl.page[pageName].passwordNotEqual}}</mat-hint>
+            </mat-form-field>
+        </div>
+    </div>
+
 
     <mat-form-field *ngIf="show">
         <mat-label>Country</mat-label>
@@ -30,61 +73,86 @@
         </mat-select>
     </mat-form-field>
 
-    <mat-form-field>
-        <mat-label>{{trnsl.page[pageName].district}}</mat-label>
-        <mat-select required name="districtId" [(ngModel)]="signupForm.districtId" #districtId="ngModel"
-            (selectionChange)="selectDistrict($event.value)">
-            <mat-option *ngFor="let district of districts" [value]="district.id">
-                {{district.name}}
-            </mat-option>
-        </mat-select>
-    </mat-form-field>
+    <div class="row">
+        <div class="col-md-3">
+            <mat-form-field>
+                <mat-label>{{trnsl.page[pageName].district}}</mat-label>
+                <mat-select required name="districtId" [(ngModel)]="signupForm.districtId" #districtId="ngModel"
+                    (selectionChange)="selectDistrict($event.value)">
+                    <mat-option *ngFor="let district of districts" [value]="district.id">
+                        {{district.name}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="col-md-3">
+            <mat-form-field>
+                <mat-label>{{trnsl.page[pageName].area}}</mat-label>
+                <mat-select required name="areaId" [(ngModel)]="signupForm.areaId" #areaId="ngModel"
+                    (selectionChange)="selectArea($event.value)">
+                    <mat-option *ngFor="let area of areas" [value]="area.id">
+                        {{area.name}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="col-md-3">
+            <mat-form-field>
+                <input matInput name="block" [(ngModel)]="signupForm.block" (focusout)="blockEvent()" maxlength="10"
+                    #block="ngModel" placeholder="{{trnsl.page[pageName].block}}" type="text" required>
+                <mat-hint>ex: sector/street/block i.e: 11 or 11-A</mat-hint>
+            </mat-form-field>
+        </div>
+        <div class="col-md-3">
+            <mat-form-field>
+                <input matInput name="houseNo" (focusout)="houseNoEvent()" pattern="^[0-9]*$"
+                    [(ngModel)]="signupForm.houseNo" maxlength="10" #houseNo="ngModel"
+                    placeholder="{{trnsl.page[pageName].houseNo}}" type="text" required>
+                <mat-hint>ex: house# i.e: 349</mat-hint>
+            </mat-form-field>
+        </div>
+    </div>
 
-    <mat-form-field>
-        <mat-label>{{trnsl.page[pageName].area}}</mat-label>
-        <mat-select required name="areaId" [(ngModel)]="signupForm.areaId" #areaId="ngModel"
-            (selectionChange)="selectArea($event.value)">
-            <mat-option *ngFor="let area of areas" [value]="area.id">
-                {{area.name}}
-            </mat-option>
-        </mat-select>
-    </mat-form-field>
+    <div class="row" *ngIf="signupForm.districtId && signupForm.areaId && signupForm.block && signupForm.houseNo">
+        <div class="col-md-12">
+            <mat-form-field>
+                <textarea matInput name="address" maxlength="200" [(ngModel)]="signupForm.address" #address="ngModel"
+                    placeholder="{{trnsl.page[pageName].address}}" type="text" required>
+                            </textarea>
+                <mat-hint>ex: District Area (Sector/Street#/Block) House#</mat-hint>
+            </mat-form-field>
+        </div>
+    </div>
 
-    <mat-form-field>
-        <input matInput name="block" [(ngModel)]="signupForm.block" (focusout)="blockEvent()" maxlength="10"
-            #block="ngModel" placeholder="{{trnsl.page[pageName].block}}" type="text" required>
-        <mat-hint>ex: sector/street/block i.e: 11 or 11-A</mat-hint>
-    </mat-form-field>
 
-    <mat-form-field>
-        <input matInput name="houseNo" (focusout)="houseNoEvent()" pattern="^[0-9]*$" [(ngModel)]="signupForm.houseNo"
-            maxlength="10" #houseNo="ngModel" placeholder="{{trnsl.page[pageName].houseNo}}" type="text" required>
-        <mat-hint>ex: house# i.e: 349</mat-hint>
-    </mat-form-field>
+    <div class="row">
+        <div class="col-md-6">
+            <mat-form-field>
+                <input matInput name="name" maxlength="100" [(ngModel)]="signupForm.name" #name="ngModel"
+                    placeholder="{{trnsl.page[pageName].name}}" type="text">
+            </mat-form-field>
+        </div>
 
-    <mat-form-field *ngIf="signupForm.districtId && signupForm.areaId && signupForm.block && signupForm.houseNo">
-        <textarea matInput name="address" maxlength="200" [(ngModel)]="signupForm.address" #address="ngModel"
-            placeholder="{{trnsl.page[pageName].address}}" type="text" required>
-        </textarea>
-        <mat-hint>ex: District Area Sector/Street#/Block</mat-hint>
-    </mat-form-field>
+        <div class="col-md-6">
+            <mat-form-field>
+                <input matInput pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$" name="email" maxlength="150"
+                    [(ngModel)]="signupForm.email" #email="ngModel" placeholder="{{trnsl.page[pageName].email}}"
+                    type="email">
+                <mat-hint>ex: abcd@domain.com</mat-hint>
+                <!-- <mat-hint class="error" *ngIf="email.errors && email.errors.pattern && signupFormU.submitted">
+                            {{trnsl.page[pageName].validEmail}} ex:
+                            sdsdsdsd ex: abcd@domain.com</mat-hint> -->
+            </mat-form-field>
+        </div>
+    </div>
 
-    <mat-form-field>
-        <input matInput name="name" maxlength="100" [(ngModel)]="signupForm.name" #name="ngModel"
-            placeholder="{{trnsl.page[pageName].name}}" type="text">
-    </mat-form-field>
 
-    <mat-form-field>
-        <input matInput pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$" name="email" maxlength="150"
-            [(ngModel)]="signupForm.email" #email="ngModel" placeholder="{{trnsl.page[pageName].email}}" type="email">
-        <mat-hint>ex: abcd@domain.com</mat-hint>
-        <!-- <mat-hint class="error" *ngIf="email.errors && email.errors.pattern && signupFormU.submitted">
-            {{trnsl.page[pageName].validEmail}} ex:
-            sdsdsdsd ex: abcd@domain.com</mat-hint> -->
-    </mat-form-field>
 
     <p class="error" *ngIf="errorMsg">{{ errorMsg }}</p>
-    <button mat-raised-button type="submit" name="SubmitBtn" [disabled]='signupFormU.invalid' color="primary">
+
+    <button mat-raised-button type="submit" name="SubmitBtn"
+        [disabled]='signupFormU.invalid || signupForm.password !== signupForm.confirmPassword' color="primary">
         {{ trnsl.page[pageName].submitBtn }}</button>
-    <!-- <button mat-button name="signupBtn" (click)="routeToLogin()">Login!</button> -->
+
+    <button mat-button type="button" name="signupBtn" (click)="routeToLogin()">Login!</button>
 </form>

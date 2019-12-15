@@ -15,8 +15,9 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { AppLayoutComponent } from './layout/app-layout/app-layout.component';
 import { AppLayoutHeaderComponent } from './layout/app-layout/app-layout-header/app-layout-header.component';
-import { TranslationManagerService } from './common/translation-manager.service';
+import { TranslationManagerService } from './common/translation/translation-manager.service';
 import { NgxUiLoaderModule, NgxUiLoaderHttpModule } from  'ngx-ui-loader';
+import { AuthService } from './common/services/auth-service.service';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,7 @@ import { NgxUiLoaderModule, NgxUiLoaderHttpModule } from  'ngx-ui-loader';
     NgxUiLoaderHttpModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
-  providers: [ TranslationManagerService ],
+  providers: [ TranslationManagerService, AuthService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
