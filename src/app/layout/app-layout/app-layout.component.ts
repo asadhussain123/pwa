@@ -60,7 +60,7 @@ export class AppLayoutComponent implements OnInit {
     media: MediaMatcher,
     public trnsl: TranslationManagerService,
     private router: Router,
-    private authSerivce: AuthService) {
+    public authSerivce: AuthService) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
