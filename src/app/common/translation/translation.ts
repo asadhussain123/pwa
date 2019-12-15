@@ -33,7 +33,8 @@ export const Translation = {
             
         },
         appLayout: {
-            language: "Language"
+            language: "Language",
+            logout: "Logout"
         } 
     },
     ur: {
@@ -68,7 +69,8 @@ export const Translation = {
             milkAverageUsage: "دودھ اوسط استعمال فی مہینہ (کلوگرام)",
         },
         appLayout: {
-            language: "زبان"
+            language: "زبان",
+            logout: "لاگ آوٹ"
         } 
     },
 }

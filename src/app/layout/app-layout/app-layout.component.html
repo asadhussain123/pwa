@@ -10,7 +10,7 @@
 
       <div class="content">
         <button mat-raised-button type="button" *ngIf="authSerivce.isLoggedIn" name="SubmitBtn" (click)="logout()" color="primary">
-            logout</button>
+            {{ trnsl.page[pageName].logout</button>
         <mat-form-field>
           <mat-label>{{ trnsl.page[pageName].language }}</mat-label>
           <mat-select (selectionChange)="languageChange($event.value)">
