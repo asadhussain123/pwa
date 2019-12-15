@@ -161,8 +161,17 @@ a {
 
 a.underlineTxt {
     text-decoration: underline;
+    color: #6c8fc9;
 }
 
 .alignTextCenter {
     text-align: center;
+}
+
+.mat-toolbar.mat-primary {
+    background-color: #233e85;
+}
+
+.mat-flat-button.mat-primary, .mat-raised-button.mat-primary, .mat-fab.mat-primary, .mat-mini-fab.mat-primary {
+    background-color: #233e85;
 }
