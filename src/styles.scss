@@ -115,6 +115,13 @@ a {
         font-family: Noori, Nafees, sans-serif;
         font-size: 30px;
     }
+
+    .mat-form-field-flex {
+        line-height: 35px;
+    }
+    .mat-hint {
+        line-height: 20px;
+    }
 }
 
 .nTranslate {
@@ -150,4 +157,12 @@ a {
 
 .form-heading {
     padding: 15px;
+}
+
+a.underlineTxt {
+    text-decoration: underline;
+}
+
+.alignTextCenter {
+    text-align: center;
 }
