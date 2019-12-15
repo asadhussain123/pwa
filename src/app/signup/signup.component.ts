@@ -65,7 +65,7 @@ export class SignupComponent implements OnInit {
     this.loadArea(districtId);
   }
 
-  selectArea() {
+  selectArea(area) {
     this.updateAddress();
   }
 
