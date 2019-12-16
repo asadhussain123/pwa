@@ -8,7 +8,8 @@ export const Translation = {
             phone: "Enter Phone Number",
             password: "Enter password",
             notAMember: "Not a member?",
-            register: "Register"
+            register: "Register",
+            numbersOnlyMsg: "Please enter valid number",
         }
         ,
         signupPage: {
@@ -35,7 +36,13 @@ export const Translation = {
         appLayout: {
             language: "Language",
             logout: "Logout"
-        } 
+        },
+        thankyouPage: {
+            thanyoutxt1: "Thank You!",
+            thanyoutxt2: "For registering with us",
+            thanyoutxt3: "we are comming soon",
+            loginIn: "Sign in"
+        }
     },
     ur: {
         app: {
@@ -46,7 +53,8 @@ export const Translation = {
             phone: "فون نمبر درج کریں",
             password: "پاس ورڈ درج کریں",
             notAMember: "ممبر نہیں؟",
-            register: "رجسٹر کریں"
+            register: "رجسٹر کریں",
+            numbersOnlyMsg: "براہ کرم درست نمبر درج کریں",
         },
         signupPage: {
             phone: "فون نمبر درج کریں",
@@ -71,6 +79,12 @@ export const Translation = {
         appLayout: {
             language: "زبان",
             logout: "لاگ آوٹ"
-        } 
+        },
+        thankyouPage: {
+            thanyoutxt1: "Thank You!",
+            thanyoutxt2: "For registering with us",
+            thanyoutxt3: "we are comming soon",
+            loginIn: "Sign in"
+        }
     },
 }

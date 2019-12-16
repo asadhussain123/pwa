@@ -33,8 +33,13 @@
             <div class="md-form">
                 <mat-form-field>
                     <input matInput name="phone" placeholder="{{ trnsl.page[pageName].phone }}"
-                        [(ngModel)]="loginForm.userName" type="tel" required #phone="ngModel">
-                    <mat-hint>ex: 03002465741</mat-hint>
+                    pattern="^[0-9]*$" maxlength="15" [(ngModel)]="loginForm.userName" type="tel" required #phone="ngModel">
+
+                    <mat-hint *ngIf="!phone.errors || (phone.errors && phone.errors.required)">ex: 03002465741
+                        </mat-hint>
+                    <mat-hint class="error" *ngIf="phone.errors && phone.errors.pattern">
+                            {{trnsl.page[pageName].numbersOnlyMsg}} ex: 03002465741</mat-hint>
+
                 </mat-form-field>
             </div>
 
