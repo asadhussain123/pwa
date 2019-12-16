@@ -6,6 +6,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { AppLayoutComponent } from './layout/app-layout/app-layout.component';
 import { AuthGuard } from './common/guards/auth-guard.service';
 import { NoAuthGuard } from './common/guards/no-auth-guard.service';
+import { ThankyoupageComponent } from './thankyoupage/thankyoupage.component';
 
 
 const routes: Routes = [
@@ -19,7 +20,8 @@ const routes: Routes = [
       { path: '', component: SignupComponent, pathMatch: 'full'},
       { path: 'login', component: LoginComponent, canActivate: [NoAuthGuard]},
       { path: 'signup', component: SignupComponent, canActivate: [NoAuthGuard] },
-      { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] }
+      { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
+      { path: 'thankyou', component: ThankyoupageComponent, canActivate: [NoAuthGuard] }
     ]
   },
   { path: '**', redirectTo: '' }

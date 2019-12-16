@@ -46,7 +46,7 @@ export class SignupComponent implements OnInit {
       .subscribe(
         response => {
           this.errorMsg = null;
-          this.route.navigate(['/dashboard']);
+          this.route.navigate(['/thankyou']);
         },
         error => {
           const msg = error.error || error.message;

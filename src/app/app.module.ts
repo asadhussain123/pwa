@@ -18,6 +18,7 @@ import { AppLayoutHeaderComponent } from './layout/app-layout/app-layout-header/
 import { TranslationManagerService } from './common/translation/translation-manager.service';
 import { NgxUiLoaderModule, NgxUiLoaderHttpModule } from  'ngx-ui-loader';
 import { AuthService } from './common/services/auth-service.service';
+import { ThankyoupageComponent } from './thankyoupage/thankyoupage.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { AuthService } from './common/services/auth-service.service';
     SignupComponent,
     DashboardComponent,
     AppLayoutComponent,
-    AppLayoutHeaderComponent
+    AppLayoutHeaderComponent,
+    ThankyoupageComponent
   ],
   imports: [
     BrowserModule,
